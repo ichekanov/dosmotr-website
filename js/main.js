@@ -13,7 +13,7 @@
   if (toggle && nav) {
     const setOpen = (open) => {
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       nav.classList.toggle('is-open', open);
     };
 
@@ -111,7 +111,7 @@
       });
 
       empty.hidden = shown !== 0;
-      count.textContent = `Показано ${shown} из ${rows.length}`;
+      count.textContent = `Showing ${shown} of ${rows.length}`;
     };
 
     input.addEventListener('input', apply);
@@ -184,7 +184,7 @@
     soundToggle.addEventListener('click', () => {
       soundOn = !soundOn;
       soundToggle.setAttribute('aria-pressed', String(soundOn));
-      state.textContent = soundOn ? 'вкл' : 'выкл';
+      state.textContent = soundOn ? 'on' : 'off';
       if (soundOn) beep();
     });
   }
@@ -224,7 +224,7 @@
     const update = (animate) => {
       const checked = boxes.filter((box) => box.checked).length;
       const complete = checked === boxes.length;
-      counter.textContent = `Готово ${checked} из ${boxes.length}`;
+      counter.textContent = `${checked} of ${boxes.length} done`;
       meterFill.style.width = `${(checked / boxes.length) * 100}%`;
       meter.setAttribute('aria-valuenow', String(checked));
       done.hidden = !complete;
